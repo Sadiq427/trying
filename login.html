@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login • Sahil Property</title>
+
+  <style>
+    body {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/3.jpg');
+      height: 100vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .login {
+      width: 100%;
+      max-width: 420px;
+      position: relative;
+    }
+
+    .login-card {
+      backdrop-filter: blur(10px);
+      background: linear-gradient(220deg, rgba(12, 67, 82, 0.31), rgba(6, 80, 105, 0.56));
+      /* border-radius: 20px; */
+      padding: 35px;
+      color: #fff;
+      /* border: 1px solid rgba(255,255,255,0.25); */
+
+    }
+
+    .login-card:hover {
+      background: linear-gradient(240deg, rgba(12, 67, 82, 0.31), rgba(6, 80, 105, 0.56));
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--  -->
+  <div class="login">
+    <div class="login-card text-white text-center">
+
+      <h3 class="mb-4">Sahil Property dealing system</h3>
+
+      <form>
+        <div class="mb-1 text-start">
+          <label class="form-label">Email</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" />
+        </div>
+
+        <div class="mb-3 text-start">
+          <label class="form-label">Password</label>
+          <input type="password" id="pass" name="password" class="form-control" placeholder="Enter password" />
+        </div>
+
+        <div>
+          <button type="submit" class="btn btn-sm btn-warning w-25  mt-2">Login</button>
+
+        </div>
+      </form>
+
+      <p class="mt-4 mb-0 text-white"> <a href="" class="text-white">Go Home page</a></p>
+      <div class="msg py-3"></div>
+    </div>
+  </div>
+
+
+
+  <script>
+    $(document).ready(function() {
+
+      $("form").on("submit", function(s) {
+
+        s.preventDefault();
+
+        $.ajax({
+          url: "logics/login.php",
+          type: "post",
+          dataType: "json",
+          data: $("form").serialize(),
+          success: function(data) {
+            if (data.code == 0) {
+              $(".msg").addClass("text-warning shadow").html(data.msg);
+            }else
+            {
+              window.location.assign("user/dashboard.php")
+            }
+            setTimeout(function() {
+              $(".msg").removeClass("text-warning shadow").html("");
+            }, 4000);
+          }
+        })
+
+
+      })
+
+    });
+  </script>
+
+
+
+
+
+</body>
+
+</html>

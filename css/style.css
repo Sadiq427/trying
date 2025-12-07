@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+html
+{
+  scroll-behavior: smooth !important;
+}
+body
+{
+   font-family: "Poppins", sans-serif !important;
+}
+:root
+{
+  --main-color: #554133;
+  --main-grey-color: grey;
+}
+
+.scroll-animation
+{
+  height: 7px;
+  background-color: orange !important;
+  position: fixed;
+  top: 0%;
+  width: 100%;
+  z-index: 9999;
+  scale: 0 1;
+  animation: scroll  linear;
+  animation-timeline: scroll();
+  transform-origin: left;
+}
+@keyframes scroll {
+  to{
+    scale: 1 1;
+
+  }
+  
+}
+
+.property-color
+{
+  color: orange  !important;
+}
+.hero-section-info h1
+{
+  text-transform: uppercase !important;
+}
+/* BACKGROUND IMAGE */
+.background-img
+{
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0, 0, 0, 0.8)), url(../assets/4.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* FRONT DESIGN CUSTOM CSS */
+
+.navbar 
+{
+  position: sticky !important;
+  top: 0% !important;
+  z-index: 1000;
+  /* border-radius: 8px !important; */
+  /* background-color: var(--main-color) !important; */
+  color: white !important;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.87) , rgba(3, 159, 211, 0.424) );
+}
+
+.navbar .container div
+{
+  width: 6% !important;
+}
+.navbar .container div img
+{
+  object-fit: contain;
+  width: 100% !important;
+  transform: scale(95%);
+  transition: all .3s ease;
+  rotate: 0deg;
+} 
+
+.navbar .container div img:hover
+{
+  transform: scale(100%) !important;
+  rotate: -5deg;
+  /* transform: translateX(-5px) !important; */
+}
+
+.navbar ul li a
+{
+  transition: all 0.2s ease;
+  
+  /* border-bottom: 1px solid white !important; */
+  color: white !important;
+}
+.navbar ul li a:hover
+{
+  /* transform: translateY(-1px) !important; */
+  color: black !important;
+  /* border-bottom: 1px solid var(--main-color) !important; */
+}
+
+.slick-slider
+{
+  object-fit: contain !important;
+  box-shadow: 0px 0px 10px 9px rgba(0, 0, 0, 0.018) !important;
+  /* height: 55vh; */
+  border: 0px !important;
+}
+.slick-slider img
+{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center;
+}
+.pagination-div
+{
+  width: 100% !important;
+}
+.hero-right img
+{
+  filter: blur(100px) !important;
+
+
+}
+
+/* CARD */
+.cards-container .card .card-top
+{
+  position: relative;
+  height: 180px;
+}
+.cards-container .card .card-top img
+{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cards-container .card .card-top:hover::after
+{
+  content: "Your dream house in our property ";
+  color: white !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.719) , rgba(3, 56, 73, 0.779) );
+  opacity: 0.9;
+  top: 0;
+
+  left: 0;
+  z-index: 1000;
+  position: absolute;
+  width: 100%;
+  height: 100% ;
+}
+.cards-container .card-details p
+{
+  font-size: 12px !important;
+  color: rgb(131, 131, 131);
+}
+.cards-container .card
+{
+  transition: all .2s linear;
+  opacity: 0.9;
+}
+.cards-container .card:hover
+{
+  filter: grayscale(0%);
+  opacity: 1;
+  box-shadow: 0px 15px 30px 1px rgb(231, 231, 231) !important;
+}
+/* CARD END */
+
+
+
+/* ABOUT US */
+/* ABOUT US END */
+
+/* CLIENTS */
+.clients-container img
+{
+  border-radius: 50%;
+  width: 50px !important;
+  height: 50px !important;
+  object-fit: cover;
+  z-index: 1000;
+  object-position: center;
+}
+/* CLIENTS END */
+.bottom-to-top-btn
+{
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+  position: fixed;
+  background-color: orange !important;
+  z-index: 9999;
+  /* color: white; */
+  bottom: 20px !important;
+  right: 30px !important;
+  animation: move .5 linear alternate infinite;
+
+} 
+@keyframes move {
+  from{
+    transform: translateY(0px) ;
+  }
+  to
+  {
+    transform: translateY(14px);
+  }
+}
+.bottom-to-top-btn span
+{
+}
+.bottom-to-top-btn span
+
+
+
+/* FRONT DESIGN CUSTOMIZATION END */
+
+
+/* DASHBOARD DESIGN START*/
+
+.dashboard-side-bar ul li  a
+{
+  font-size: 12px !important;
+}
+.dashboard-side-bar ul li a:hover
+{
+  cursor: pointer !important;
+  color: rgb(39, 39, 39) !important;
+}
+
+
+.dashboard-profile-div img
+{
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+}
+.dashboard-profile-div
+{
+  position: relative !important;
+
+}
+
+.dashboard-profile-div::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(160, 255, 17);
+    border-radius: 50%;
+    /* border: 1px solid rgb(45, 45, 45); */
+    box-shadow: 0px 0px 10px black !important;
+    top: 58%;
+    
+}
+
+
+
+/* DASHBOARD DESIGN END */
+
+
+
+
+
+
+
+
+
+
